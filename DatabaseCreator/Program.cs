@@ -9,12 +9,13 @@ namespace DatabaseCreator
 {
     class Program
     {
+        static string databaseName;
         static void Main(string[] args)
         {
             Console.WriteLine("Ange namn på nytt databas:");
             try
             {
-                var databaseName = Console.ReadLine();
+                databaseName = Console.ReadLine();
                 CreateDatabase(databaseName);
             }
             catch (Exception)
@@ -49,7 +50,7 @@ namespace DatabaseCreator
 
         private static SqlConnection OpenEducation()
         {
-            var cns = "Data Source=(localdb)\\MSSQLLocalDB;Database=Education";
+            var cns = "Data Source=(localdb)\\MSSQLLocalDB;Database="+databaseName+"";
             SqlConnection cn = new SqlConnection(cns);
             return cn;
             
