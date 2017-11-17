@@ -43,9 +43,10 @@ namespace DatabaseCreator
             }
                      
         }
-
+#region Show Menu
+       
         private static void ShowMenu()
-        {
+        {            
             Console.WriteLine("1. Skapa databasen Education");
             Console.WriteLine("2. Lägg till tabellen Courses");
             Console.WriteLine("3. Lägg till tabellen Students");
@@ -54,6 +55,7 @@ namespace DatabaseCreator
             Console.WriteLine("6. Lista innehållet i tabellerna");
             Console.WriteLine("A. Avsluta");
         }
+#endregion
         private static void CreateDatabase()
         {
             var cns = "Data Source=(localdb)\\MSSQLLocalDB;Database=Master";
